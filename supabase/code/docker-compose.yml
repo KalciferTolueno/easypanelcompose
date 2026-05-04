@@ -64,7 +64,8 @@ services:
     image: kong:2.8.1
     restart: unless-stopped
     ports:
-      - "8001:8000"
+      - "8010:8000"  # <--- Cambiado de 8000 a 8010 (API de Supabase)
+      - "8011:8001"
     volumes:
       # https://github.com/supabase/supabase/issues/12661
       - ./volumes/api/kong.yml:/home/kong/temp.yml:ro,z
