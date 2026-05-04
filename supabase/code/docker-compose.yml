@@ -64,7 +64,8 @@ services:
     image: kong:2.8.1
     restart: unless-stopped
     ports:
-      - "8001:8000"
+      - "8000:8000"  # <--- n8n usará este puerto para el Servidor 1
+      - "8001:8001"  # Puerto de admin
     volumes:
       # https://github.com/supabase/supabase/issues/12661
       - ./volumes/api/kong.yml:/home/kong/temp.yml:ro,z
